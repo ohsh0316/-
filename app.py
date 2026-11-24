@@ -224,7 +224,7 @@ if st.button("🔍 수율 분석하기", use_container_width=True):
 
         st.markdown("---")
 
-        st.header("5. 반도체 수율 목록")
+        st.header("4. 반도체 수율 목록")
 
         # 테이블 데이터 리스트 생성
         table_data = []
@@ -252,7 +252,7 @@ if st.button("🔍 수율 분석하기", use_container_width=True):
         # 11. 전체 반도체 평균 수율 계산
         # ==================================
 
-        st.header("4. 전체 반도체 평균 수율")
+        st.header("5. 전체 반도체 평균 수율")
 
         average_yield = calculate_average(yield_rates)
 
