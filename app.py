@@ -216,35 +216,10 @@ if st.button("🔍 수율 분석하기", use_container_width=True):
             st.markdown("---")
 
 
-        # ==================================
-        # 10. 전체 반도체 평균 수율 계산
-        # ==================================
-
-        st.header("4. 전체 반도체 평균 수율")
-
-        average_yield = calculate_average(yield_rates)
-
-        st.metric(
-            label="평균 수율",
-            value=f"{average_yield:.2f}%"
-        )
-
-        # 평균 수율에 따른 상태 판정
-        if average_yield >= 90:
-
-            st.success("전체 평균 수율: 양호")
-
-        elif average_yield >= 85:
-
-            st.warning("전체 평균 수율: 보통")
-
-        else:
-
-            st.error("전체 평균 수율: 개선 필요")
-
+       
 
         # ==================================
-        # 11. 반도체 수율 목록 테이블
+        # 10. 반도체 수율 목록 테이블
         # ==================================
 
         st.markdown("---")
@@ -273,6 +248,31 @@ if st.button("🔍 수율 분석하기", use_container_width=True):
         # 테이블 출력
         st.table(df)
 
+        # ==================================
+        # 11. 전체 반도체 평균 수율 계산
+        # ==================================
+
+        st.header("4. 전체 반도체 평균 수율")
+
+        average_yield = calculate_average(yield_rates)
+
+        st.metric(
+            label="평균 수율",
+            value=f"{average_yield:.2f}%"
+        )
+
+        # 평균 수율에 따른 상태 판정
+        if average_yield >= 90:
+
+            st.success("전체 평균 수율: 양호")
+
+        elif average_yield >= 85:
+
+            st.warning("전체 평균 수율: 보통")
+
+        else:
+
+            st.error("전체 평균 수율: 개선 필요")
 
         # ==================================
         # 12. 분석 결과 다운로드
